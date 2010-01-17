@@ -1,0 +1,23 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Video
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          video
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:  
+        display: [=youtube_title, published, created_at]
+      filter:  
+        display: [youtube_title, youtube_id, created_at] 
+      form:    ~
+      edit:    ~ 
+      new:     ~

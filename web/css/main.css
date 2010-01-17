@@ -1,0 +1,17 @@
+body {
+  font-size: 100%;
+  padding: 20px 0px;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+input, label {
+  font-size: 1.6em;
+}
+
+.intro {
+  font-weight: bold;
+}
+

@@ -1,0 +1,59 @@
+Video:
+  actAs:  { Timestampable: ~ }
+  columns:
+    url:                  { type: string(255) }
+    youtube_id:           { type: string(40), notnull: true, unique: true }
+    youtube_title:        { type: string(100) }
+    youtube_description:  { type: string(1000) }
+    published:            { type: boolean, notnull: true, default: 0}
+    year:                 { type: integer }
+    event_id:             { type: integer }
+  relations:
+    Event:
+      local: event_id
+      foreign: id
+      foreignAlias: Videos
+      
+Dancer:
+  columns:
+    name:         { type: string(255) }
+  relations:
+     Videos:
+       class: Video
+       foreignAlias: Dancers
+       refClass: VideoDancer
+
+Song:
+  columns:
+    title:  { type: string(100) }
+    artist: { type: string(100) }
+  relations:
+     Videos:
+       class: Video
+       foreignAlias: Songs
+       refClass: VideoSong
+
+Event:
+  columns:
+    name:   { type: string(100) }
+    state:  { type: string(100) }
+
+VideoDancer:
+  columns:
+    video_id: { type: integer, primary: true }
+    dancer_id:   { type: integer, primary: true }
+  relations:
+    Video:
+      foreignAlias: VideoDancers
+    Dancer:
+      foreignAlias: VideoDancers
+
+VideoSong:
+  columns:
+    video_id: { type: integer, primary: true }
+    song_id:   { type: integer, primary: true }
+  relations:
+    Video:
+      foreignAlias: VideoDancers
+    Dancer:
+      foreignAlias: VideoDancers
