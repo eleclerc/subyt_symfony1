@@ -14,11 +14,13 @@ abstract class BaseDancerFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'name'        => new sfWidgetFormFilterInput(),
+      'website'     => new sfWidgetFormFilterInput(),
       'videos_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Video')),
     ));
 
     $this->setValidators(array(
       'name'        => new sfValidatorPass(array('required' => false)),
+      'website'     => new sfValidatorPass(array('required' => false)),
       'videos_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Video', 'required' => false)),
     ));
 
@@ -57,6 +59,7 @@ abstract class BaseDancerFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'          => 'Number',
       'name'        => 'Text',
+      'website'     => 'Text',
       'videos_list' => 'ManyKey',
     );
   }

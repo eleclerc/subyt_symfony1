@@ -16,7 +16,8 @@ Video:
       
 Dancer:
   columns:
-    name:         { type: string(255) }
+    name:       { type: string(255) }
+    website:    { type: string(255) }
   relations:
      Videos:
        class: Video
