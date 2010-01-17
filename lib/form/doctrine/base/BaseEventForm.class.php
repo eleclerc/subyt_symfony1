@@ -17,14 +17,12 @@ abstract class BaseEventForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'    => new sfWidgetFormInputHidden(),
       'name'  => new sfWidgetFormInputText(),
-      'city'  => new sfWidgetFormInputText(),
       'state' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'    => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
       'name'  => new sfValidatorString(array('max_length' => 100, 'required' => false)),
-      'city'  => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'state' => new sfValidatorString(array('max_length' => 100, 'required' => false)),
     ));
 

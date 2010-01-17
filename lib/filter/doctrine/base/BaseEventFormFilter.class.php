@@ -14,13 +14,11 @@ abstract class BaseEventFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'name'  => new sfWidgetFormFilterInput(),
-      'city'  => new sfWidgetFormFilterInput(),
       'state' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'name'  => new sfValidatorPass(array('required' => false)),
-      'city'  => new sfValidatorPass(array('required' => false)),
       'state' => new sfValidatorPass(array('required' => false)),
     ));
 
@@ -43,7 +41,6 @@ abstract class BaseEventFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'    => 'Number',
       'name'  => 'Text',
-      'city'  => 'Text',
       'state' => 'Text',
     );
   }
