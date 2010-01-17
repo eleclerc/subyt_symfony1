@@ -2,8 +2,7 @@
   <div class="box intro">
   <p>Browse your favorite West Coast Swing video by<br />
       <a href="<?php echo url_for('dancer/index') ?>">Dancer</a>,
-      <a href="">Song Title</a>,
-      <a href="">Song Artist</a>,
+      <a href="<?php echo url_for('music/index') ?>">Music</a>,
       <a href="">Year</a>,
 	or <a href="<?php echo url_for('video/list') ?>">see all videos</a></p>
   </div>
