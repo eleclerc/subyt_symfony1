@@ -5,6 +5,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      'sqlite:/Users/eric/Sites/subyt_symfony/data/subyt.db'
+      dsn:      'sqlite:%SF_DATA_DIR%/subyt.db'
       username: root
       password: 
