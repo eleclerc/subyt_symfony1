@@ -37,4 +37,21 @@ class videoActions extends sfActions
               ->find($request->getParameter('id'));
       $this->forward404Unless($this->video);
   }
+
+  public function executeSubmit(sfWebRequest $request)
+  {
+      ProjectConfiguration::registerZend();
+
+      $this->video = new Video();
+      $this->video->url = $request->getParameter('url');
+      try { 
+        $this->video->populateFromUrl();
+        $this->video->save();
+      } catch (Exception $e) {
+          $this->error = $e->getMessage();
+          $this->video = array();
+          die('exception '. $e->getMessage());
+      }
+  }
+
 }

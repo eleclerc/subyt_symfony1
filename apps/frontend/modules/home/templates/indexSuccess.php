@@ -16,7 +16,7 @@
 
 <div class="span-24">
 You may help us improve this website by submitting a new WCS video clip for tagging<br />
-<form method="post" action="#">
+<form method="post" action="<?php echo url_for('video/submit') ?>">
   <input type="text" name="url" id="url" value="paste a youtube video url..." size="32" />
   <input type="submit" value="...and submit it!" />
 </form>

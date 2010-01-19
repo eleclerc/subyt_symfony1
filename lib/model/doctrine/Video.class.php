@@ -12,4 +12,31 @@
  */
 class Video extends BaseVideo
 {
+    public function populateFromUrl()
+    {
+        $urlArray = parse_url($this->getUrl());
+        if (!isset($urlArray['query'])) {
+            throw new Exception('Invalid URL');
+        }
+
+        parse_str($urlArray['query'], $query);
+
+        if (!isset($query['v'])) {
+            throw new Exception('Invalide YouTube Video URL');
+        }
+
+        $youtube_id = $query['v'];
+
+        $yt = new Zend_Gdata_YouTube();
+        try {
+            $videoEntry = $yt->getVideoEntry($youtube_id);
+        } catch (Zend_Gdata_App_HttpException $e) {
+            //YouTube may be down too?
+            throw new Exception('Invalid YouTube Video URL');
+        }
+
+        $this->youtube_id = $youtube_id;
+        $this->youtube_title = $videoEntry->getVideoTitle();
+        $this->youtube_description = $videoEntry->getVideoDescription();
+    }
 }
