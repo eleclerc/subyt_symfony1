@@ -5,6 +5,7 @@ Video:
     youtube_id:           { type: string(40), notnull: true, unique: true }
     youtube_title:        { type: string(100) }
     youtube_description:  { type: string(1000) }
+    youtube_thumbnail:    { type: string(255) }
     published:            { type: boolean, notnull: true, default: 0}
     year:                 { type: integer }
     event_id:             { type: integer }

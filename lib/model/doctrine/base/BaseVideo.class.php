@@ -9,6 +9,7 @@
  * @property string $youtube_id
  * @property string $youtube_title
  * @property string $youtube_description
+ * @property string $youtube_thumbnail
  * @property boolean $published
  * @property integer $year
  * @property integer $event_id
@@ -21,6 +22,7 @@
  * @method string              getYoutubeId()           Returns the current record's "youtube_id" value
  * @method string              getYoutubeTitle()        Returns the current record's "youtube_title" value
  * @method string              getYoutubeDescription()  Returns the current record's "youtube_description" value
+ * @method string              getYoutubeThumbnail()    Returns the current record's "youtube_thumbnail" value
  * @method boolean             getPublished()           Returns the current record's "published" value
  * @method integer             getYear()                Returns the current record's "year" value
  * @method integer             getEventId()             Returns the current record's "event_id" value
@@ -32,6 +34,7 @@
  * @method Video               setYoutubeId()           Sets the current record's "youtube_id" value
  * @method Video               setYoutubeTitle()        Sets the current record's "youtube_title" value
  * @method Video               setYoutubeDescription()  Sets the current record's "youtube_description" value
+ * @method Video               setYoutubeThumbnail()    Sets the current record's "youtube_thumbnail" value
  * @method Video               setPublished()           Sets the current record's "published" value
  * @method Video               setYear()                Sets the current record's "year" value
  * @method Video               setEventId()             Sets the current record's "event_id" value
@@ -43,7 +46,7 @@
  * @package    subyt
  * @subpackage model
  * @author     Eric Leclerc <eric.leclerc@gmail.com>
- * @version    SVN: $Id: Builder.php 7021 2010-01-12 20:39:49Z lsmith $
+ * @version    SVN: $Id: Builder.php 6820 2009-11-30 17:27:49Z jwage $
  */
 abstract class BaseVideo extends sfDoctrineRecord
 {
@@ -67,6 +70,10 @@ abstract class BaseVideo extends sfDoctrineRecord
         $this->hasColumn('youtube_description', 'string', 1000, array(
              'type' => 'string',
              'length' => '1000',
+             ));
+        $this->hasColumn('youtube_thumbnail', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
         $this->hasColumn('published', 'boolean', null, array(
              'type' => 'boolean',

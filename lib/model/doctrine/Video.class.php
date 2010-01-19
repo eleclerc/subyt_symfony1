@@ -38,5 +38,7 @@ class Video extends BaseVideo
         $this->youtube_id = $youtube_id;
         $this->youtube_title = $videoEntry->getVideoTitle();
         $this->youtube_description = $videoEntry->getVideoDescription();
+        $thumbnails = $videoEntry->getVideoThumbnails();
+        $this->youtube_thumbnail = $thumbnails[0]['url'];
     }
 }
