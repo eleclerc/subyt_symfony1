@@ -18,11 +18,12 @@ class homeActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
       $this->videos = Doctrine_Query::create()
-              ->from('Video v')
-              ->leftJoin('v.Dancers d')
-              ->leftJoin('v.Songs s')
-              ->limit(5)
-              ->orderBy('created_at DESC')
-              ->execute(array());
+          ->from('Video v')
+          ->where('Published = ?', true)
+          ->leftJoin('v.Dancers d')
+          ->leftJoin('v.Songs s')
+          ->limit(5)
+          ->orderBy('created_at DESC')
+          ->execute(array());
   }
 }

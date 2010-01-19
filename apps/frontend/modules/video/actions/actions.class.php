@@ -24,6 +24,7 @@ class videoActions extends sfActions
   {
       $this->videos = Doctrine_Query::create()
           ->from('Video v')
+          ->where('Published = ?', true)
           ->leftJoin('v.Dancers d')
           ->leftJoin('v.Songs s')
           ->orderBy('created_at DESC')
