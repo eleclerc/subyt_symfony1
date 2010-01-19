@@ -17,16 +17,19 @@
           </a>
         </h1>
       </div>
- 
+    <?php if ($sf_user->isAuthenticated()): ?> 
       <div id="menu">
         <ul>
           <li><?php echo link_to('Videos', '@video') ?></li>
           <li><?php echo link_to('Dancers', '@dancer') ?></li>
           <li><?php echo link_to('Songs', '@song') ?></li>
           <li><?php echo link_to('Events', '@event') ?></li>
+          <li><?php echo link_to('Users', '@sf_guard_user') ?></li>
+          <li><?php echo link_to('Logout', '@sf_guard_signout') ?></li>
         </ul>
       </div>
- 
+    <?php endif; ?>
+
       <div id="content">
         <?php echo $sf_content ?>
       </div>
