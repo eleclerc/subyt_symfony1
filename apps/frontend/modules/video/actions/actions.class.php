@@ -49,9 +49,7 @@ class videoActions extends sfActions
         $this->video->save();
       } catch (Exception $e) {
           $this->error = $e->getMessage();
-          $this->video = array();
-          die('exception '. $e->getMessage());
+          return sfView::ERROR;
       }
   }
-
 }
