@@ -8,13 +8,16 @@
  * @property string $title
  * @property string $artist
  * @property Doctrine_Collection $Videos
+ * @property Doctrine_Collection $VideoSongs
  * 
- * @method string              getTitle()  Returns the current record's "title" value
- * @method string              getArtist() Returns the current record's "artist" value
- * @method Doctrine_Collection getVideos() Returns the current record's "Videos" collection
- * @method Song                setTitle()  Sets the current record's "title" value
- * @method Song                setArtist() Sets the current record's "artist" value
- * @method Song                setVideos() Sets the current record's "Videos" collection
+ * @method string              getTitle()      Returns the current record's "title" value
+ * @method string              getArtist()     Returns the current record's "artist" value
+ * @method Doctrine_Collection getVideos()     Returns the current record's "Videos" collection
+ * @method Doctrine_Collection getVideoSongs() Returns the current record's "VideoSongs" collection
+ * @method Song                setTitle()      Sets the current record's "title" value
+ * @method Song                setArtist()     Sets the current record's "artist" value
+ * @method Song                setVideos()     Sets the current record's "Videos" collection
+ * @method Song                setVideoSongs() Sets the current record's "VideoSongs" collection
  * 
  * @package    subyt
  * @subpackage model
@@ -43,5 +46,9 @@ abstract class BaseSong extends sfDoctrineRecord
              'refClass' => 'VideoSong',
              'local' => 'song_id',
              'foreign' => 'video_id'));
+
+        $this->hasMany('VideoSong as VideoSongs', array(
+             'local' => 'id',
+             'foreign' => 'song_id'));
     }
 }

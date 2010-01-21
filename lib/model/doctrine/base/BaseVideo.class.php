@@ -17,6 +17,7 @@
  * @property Doctrine_Collection $Dancers
  * @property Doctrine_Collection $Songs
  * @property Doctrine_Collection $VideoDancers
+ * @property Doctrine_Collection $VideoSongs
  * 
  * @method string              getUrl()                 Returns the current record's "url" value
  * @method string              getYoutubeId()           Returns the current record's "youtube_id" value
@@ -30,6 +31,7 @@
  * @method Doctrine_Collection getDancers()             Returns the current record's "Dancers" collection
  * @method Doctrine_Collection getSongs()               Returns the current record's "Songs" collection
  * @method Doctrine_Collection getVideoDancers()        Returns the current record's "VideoDancers" collection
+ * @method Doctrine_Collection getVideoSongs()          Returns the current record's "VideoSongs" collection
  * @method Video               setUrl()                 Sets the current record's "url" value
  * @method Video               setYoutubeId()           Sets the current record's "youtube_id" value
  * @method Video               setYoutubeTitle()        Sets the current record's "youtube_title" value
@@ -42,11 +44,12 @@
  * @method Video               setDancers()             Sets the current record's "Dancers" collection
  * @method Video               setSongs()               Sets the current record's "Songs" collection
  * @method Video               setVideoDancers()        Sets the current record's "VideoDancers" collection
+ * @method Video               setVideoSongs()          Sets the current record's "VideoSongs" collection
  * 
  * @package    subyt
  * @subpackage model
  * @author     Eric Leclerc <eric.leclerc@gmail.com>
- * @version    SVN: $Id: Builder.php 6820 2009-11-30 17:27:49Z jwage $
+ * @version    SVN: $Id: Builder.php 7021 2010-01-12 20:39:49Z lsmith $
  */
 abstract class BaseVideo extends sfDoctrineRecord
 {
@@ -106,6 +109,10 @@ abstract class BaseVideo extends sfDoctrineRecord
              'foreign' => 'song_id'));
 
         $this->hasMany('VideoDancer as VideoDancers', array(
+             'local' => 'id',
+             'foreign' => 'video_id'));
+
+        $this->hasMany('VideoSong as VideoSongs', array(
              'local' => 'id',
              'foreign' => 'video_id'));
 

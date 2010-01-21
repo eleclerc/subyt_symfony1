@@ -8,16 +8,16 @@
  * @property integer $video_id
  * @property integer $song_id
  * @property Video $Video
- * @property Dancer $Dancer
+ * @property Song $Song
  * 
  * @method integer   getVideoId()  Returns the current record's "video_id" value
  * @method integer   getSongId()   Returns the current record's "song_id" value
  * @method Video     getVideo()    Returns the current record's "Video" value
- * @method Dancer    getDancer()   Returns the current record's "Dancer" value
+ * @method Song      getSong()     Returns the current record's "Song" value
  * @method VideoSong setVideoId()  Sets the current record's "video_id" value
  * @method VideoSong setSongId()   Sets the current record's "song_id" value
  * @method VideoSong setVideo()    Sets the current record's "Video" value
- * @method VideoSong setDancer()   Sets the current record's "Dancer" value
+ * @method VideoSong setSong()     Sets the current record's "Song" value
  * 
  * @package    subyt
  * @subpackage model
@@ -46,8 +46,8 @@ abstract class BaseVideoSong extends sfDoctrineRecord
              'local' => 'video_id',
              'foreign' => 'id'));
 
-        $this->hasOne('Dancer', array(
-             'local' => 'dancer_id',
+        $this->hasOne('Song', array(
+             'local' => 'song_id',
              'foreign' => 'id'));
     }
 }
