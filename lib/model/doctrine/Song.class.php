@@ -12,4 +12,8 @@
  */
 class Song extends BaseSong
 {
+    public function __toString()
+    {
+        return $this->getArtist() . ' - ' . $this->getTitle();
+    }
 }

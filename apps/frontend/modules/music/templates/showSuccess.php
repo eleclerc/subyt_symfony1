@@ -1,8 +1,6 @@
 <div class="span-24">
-<h2>Music :: <?php echo $song['artist'] ?></h2>
-<h3><?php echo $song['title'] ?></h3>
+<h2>Music :: <?php echo $song ?></h2>
 
-<?php //TODO ?>
-<?php echo 'TODO' ?>
+<?php include_partial('video/list', array('videos' => $song->Videos, 'thumbnail' => true)) ?>
 
 </div>

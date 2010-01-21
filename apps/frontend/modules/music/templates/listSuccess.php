@@ -3,8 +3,8 @@
 
 <ul>
     <?php foreach ($songs as $song): ?>
-    <li><a href="<?php echo url_for('music/show?id='.$song['id']) ?>">
-        <?php echo $song['artist'] ?> : <?php echo $song['title'] ?>
+    <li><a href="<?php echo url_for('music/show?id='.$song->id) ?>">
+        <?php echo $song ?>
     </a></li>
     <?php endforeach; ?>
 </ul>
