@@ -23,7 +23,7 @@
     <div class="clear"></div>
   	  <?php echo $sf_content ?>
   	<div class="clear"></div>
-    <div class="span-24 quiet append-top">
+    <div class="span-24 quiet prepend-top">
       <p id="footer">&copy; 2009 <a class="quiet" href="http://www.danceric.net">Danceric</a></p>
     </div>
   </div>
