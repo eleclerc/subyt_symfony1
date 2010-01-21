@@ -2,7 +2,7 @@
 
 	<?php if (!empty($thumbnail)): ?>
 		<div class="span-4 append-bottom">
-			<a href="<?php echo url_for('video/show?id='.$video['id']) ?>"><img src="<?php echo $video['youtube_thumbnail'] ?>" /></a>
+			<a href="<?php echo url_for('video/show?id='.$video['id']) ?>"><img src="<?php echo $video['youtube_thumbnail'] ?>" alt="thumbnail" /></a>
 		</div>
 		<div class="span-20 last">
 	<?php else: ?>
