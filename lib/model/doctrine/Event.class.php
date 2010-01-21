@@ -12,4 +12,8 @@
  */
 class Event extends BaseEvent
 {
+    public function __toString()
+    {
+        return $this->getName() . ' - ' . $this->getState();
+    }
 }
