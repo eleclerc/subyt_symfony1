@@ -17,18 +17,24 @@ class videoActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      $this->forward('list', 'video');
+      $this->forward('video', 'list');
   }
 
   public function executeList(sfWebRequest $request)
   {
-      $this->videos = Doctrine_Query::create()
+      $q = Doctrine_Query::create()
           ->from('Video v')
-          ->where('Published = ?', true)
+          ->where('published = ?', true)
           ->leftJoin('v.Dancers d')
           ->leftJoin('v.Songs s')
-          ->orderBy('created_at DESC')
-          ->execute(array());
+          ->orderBy('created_at DESC');
+
+      if ($request->hasParameter('year')) {
+          $q->where('year = ?', $request->getParameter('year'));
+          $this->filter = 'year = ' . $request->getParameter('year');
+      }
+      
+      $this->videos = $q->execute();
   }
 
   public function executeShow(sfWebrequest $request)
