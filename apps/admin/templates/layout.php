@@ -13,7 +13,7 @@
       <div id="header">
         <h1>
           <a href="<?php echo url_for('@homepage') ?>">
-            <img src="/images/lyd-video-inverted.png" alt="Admin" />
+            <img src="/images/lyd-video-b&w.png" alt="Admin" />
           </a>
         </h1>
       </div>
