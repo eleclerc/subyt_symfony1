@@ -1,0 +1,7 @@
+submit:
+  enabled:    false
+
+_list:
+  enabled:    true
+  contextual: true
+  
