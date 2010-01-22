@@ -14,9 +14,11 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:    
+        display:  [=title, =artist]
+      filter:  
+        display:  [title, artist]
       form:    
-        display: [title, artist]
+        display:  [title, artist]
       edit:    ~
       new:     ~

@@ -13,10 +13,13 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        display:  [name, website]
+      list:    
+        display:  [=name, website]
+      filter:  
+        display:  [name, website]
       form:    
-        display: [name, website]
+        display:  [name, website]
       edit:    ~
       new:     ~

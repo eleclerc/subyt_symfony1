@@ -17,7 +17,7 @@ generator:
       list:  
         display: [=youtube_title, published, created_at]
       filter:  
-        display: [youtube_title, youtube_id, created_at] 
+        display: [youtube_title, created_at] 
       form:    ~
       edit:    ~ 
       new:     ~

@@ -26,6 +26,7 @@ class yearActions extends sfActions
               ->select('DISTINCT year as year')
               ->from('Video')
               ->orderBy('year')
+              ->where('year != ""')
               ->execute();
   }
 }
