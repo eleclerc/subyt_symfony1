@@ -15,9 +15,10 @@ generator:
       actions: ~
       fields:  ~
       list:  
-        display: [=youtube_title, published, created_at]
+        display:  [=youtube_title, published, created_at]
+        sort:     [created_at, desc]
       filter:  
-        display: [youtube_title, created_at] 
+        display:  [youtube_title, created_at] 
       form:    ~
       edit:    ~ 
       new:     ~

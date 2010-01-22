@@ -17,6 +17,7 @@ generator:
         display:  [name, website]
       list:    
         display:  [=name, website]
+        sort:     [name, asc]
       filter:  
         display:  [name, website]
       form:    

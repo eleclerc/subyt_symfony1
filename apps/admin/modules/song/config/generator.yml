@@ -16,6 +16,7 @@ generator:
       fields:  ~
       list:    
         display:  [=title, =artist]
+        sort:     [artist, asc]
       filter:  
         display:  [title, artist]
       form:    
