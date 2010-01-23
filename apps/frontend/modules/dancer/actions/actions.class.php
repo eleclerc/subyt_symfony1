@@ -22,7 +22,10 @@ class dancerActions extends sfActions
 
   public function executeList(sfWebRequest $request)
   {
-      $this->dancers = Doctrine_Core::getTable('Dancer')->findAll();
+      $this->dancers = Doctrine_Query::create()
+          ->from('Dancer')
+          ->orderBy('name ASC')
+          ->execute();
   }
 
   public function executeShow(sfWebRequest $request)
