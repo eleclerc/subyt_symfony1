@@ -7,9 +7,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php use_stylesheet('blueprint/screen.css') ?>
     <?php use_stylesheet('blueprint/print.css', '', array('media' => 'print')) ?>
-    <!--[if lt IE 8]>
-      <?php echo use_stylesheet('blueprint/ie.css', '', array('media' => 'screen, projection')) ?>
-    <![endif]-->
+    <?php echo use_stylesheet('blueprint/ie.css', '', array('media' => 'screen, projection', 'condition' => 'lt IE 8')) ?>
     <?php use_stylesheet('main.css') ?>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
