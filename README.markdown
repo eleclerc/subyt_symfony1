@@ -1,11 +1,23 @@
-Before using:
+# SubYt
 
-    mkdir cache log
-    chmod 755 data
-    chmod 777 cache log data/subyt.db
+## requirements
+
+in `vendor` dir:
+
+    - symfony 1.4
+    - Zend Feamework 1.9
+
+## setup
+
+Adjust paths (for symfony and Zend Framework) in `config/ProjectConfiguration.class.php`
+
+Then setup the project
+
+    ./symfony project:permissions
+    ./symfony doctrine:build --db
+    chmod 777 data/subyt.db
     ./symfony plugin:publish-assets
-	ln -s /path/to/pear/data/symfony/web/sf ./web/sf
-
-Might have to adjust `config/ProjectConfiguration.class.php` too. Current setup is working with Zend Server CE and Symfony installed via PEAR
+	ln -s /path/to/vendor/symfony-1.9.x/data/web/sf ./web/sf
+    ./symfony guard:create-user admin password
 
 

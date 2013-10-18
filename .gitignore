@@ -1,4 +1,11 @@
-.DS_Store
+# OS Specific
+.DS_Store/
+
+# IDE Specific
 /nbproject/
-/log/
-/cache/
+/.Idea/
+
+# symfony specific
+/log/*
+/cache/*
+/vendor/*
