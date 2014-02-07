@@ -49,7 +49,7 @@
  * @package    subyt
  * @subpackage model
  * @author     Eric Leclerc <eric.leclerc@gmail.com>
- * @version    SVN: $Id: Builder.php 7021 2010-01-12 20:39:49Z lsmith $
+ * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseVideo extends sfDoctrineRecord
 {
@@ -58,25 +58,25 @@ abstract class BaseVideo extends sfDoctrineRecord
         $this->setTableName('video');
         $this->hasColumn('url', 'string', 255, array(
              'type' => 'string',
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('youtube_id', 'string', 40, array(
              'type' => 'string',
              'notnull' => true,
              'unique' => true,
-             'length' => '40',
+             'length' => 40,
              ));
         $this->hasColumn('youtube_title', 'string', 100, array(
              'type' => 'string',
-             'length' => '100',
+             'length' => 100,
              ));
         $this->hasColumn('youtube_description', 'string', 1000, array(
              'type' => 'string',
-             'length' => '1000',
+             'length' => 1000,
              ));
         $this->hasColumn('youtube_thumbnail', 'string', 255, array(
              'type' => 'string',
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('published', 'boolean', null, array(
              'type' => 'boolean',

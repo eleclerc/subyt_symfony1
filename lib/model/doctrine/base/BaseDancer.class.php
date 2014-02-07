@@ -22,7 +22,7 @@
  * @package    subyt
  * @subpackage model
  * @author     Eric Leclerc <eric.leclerc@gmail.com>
- * @version    SVN: $Id: Builder.php 7021 2010-01-12 20:39:49Z lsmith $
+ * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseDancer extends sfDoctrineRecord
 {
@@ -31,11 +31,11 @@ abstract class BaseDancer extends sfDoctrineRecord
         $this->setTableName('dancer');
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('website', 'string', 255, array(
              'type' => 'string',
-             'length' => '255',
+             'length' => 255,
              ));
     }
 
