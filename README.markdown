@@ -1,5 +1,9 @@
 # SubYt
 
+**Deprecated** 
+
+This project is deprecated, but still in a working state if you can get the requirements
+
 ## requirements
 
 in `vendor` dir:
